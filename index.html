@@ -5,164 +5,146 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nex Clash</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
 
 body{
-  background:#000;
+  background:#0a0a0a;
   color:white;
 }
 
 /* NAVBAR */
-.navbar{
-  position:fixed;
-  width:100%;
-  top:0;
-  background:rgba(0,0,0,0.85);
-  backdrop-filter:blur(10px);
-  padding:15px 20px;
+.nav{
   display:flex;
   justify-content:space-between;
-  z-index:1000;
+  align-items:center;
+  padding:15px 20px;
+  position:sticky;
+  top:0;
+  background:#000;
+  border-bottom:1px solid #111;
 }
 
-.navbar h2{
-  color:#ff1a1a;
+.nav h2{
+  color:#ff2a2a;
+  font-weight:700;
 }
 
-.download-top{
-  background:#ff1a1a;
-  padding:8px 15px;
-  border-radius:20px;
-  color:white;
+.nav a{
+  background:#ff2a2a;
+  padding:10px 18px;
+  border-radius:25px;
   text-decoration:none;
+  color:white;
 }
 
 /* HERO */
 .hero{
-  padding-top:120px;
-  padding-bottom:80px;
+  padding:80px 20px;
   text-align:center;
-  background:radial-gradient(circle,#1a0000,#000);
 }
 
 .hero h1{
-  font-size:45px;
-  color:#ff1a1a;
-  text-shadow:0 0 30px #ff1a1a;
+  font-size:32px;
+  margin-bottom:15px;
+}
+
+.hero span{
+  color:#ff2a2a;
 }
 
 .hero p{
-  margin:20px auto;
+  color:#aaa;
   max-width:500px;
-  color:#bbb;
+  margin:auto;
 }
 
 .btn{
   display:inline-block;
-  margin-top:20px;
-  padding:15px 35px;
-  background:#ff1a1a;
+  margin-top:25px;
+  padding:14px 30px;
+  background:#ff2a2a;
   border-radius:30px;
-  color:white;
   text-decoration:none;
-  box-shadow:0 0 20px #ff1a1a;
+  color:white;
   transition:.3s;
 }
 
 .btn:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 40px #ff1a1a;
+  transform:scale(1.05);
 }
 
 /* STATS */
 .stats{
   display:flex;
   justify-content:space-around;
-  padding:30px 10px;
-  background:#0a0a0a;
-  text-align:center;
-}
-
-.stats div{
+  padding:25px;
+  background:#111;
+  margin:20px;
+  border-radius:12px;
   font-size:14px;
 }
 
 /* FEATURES */
 .features{
-  padding:60px 20px;
+  padding:40px 20px;
   text-align:center;
 }
 
 .features h2{
-  color:#ff1a1a;
-  margin-bottom:30px;
+  margin-bottom:25px;
+  color:#ff2a2a;
 }
 
 .cards{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:20px;
+  gap:15px;
 }
 
 .card{
-  padding:25px;
+  background:#111;
+  padding:20px;
   border-radius:15px;
-  background:#0d0d0d;
-  border:1px solid #ff1a1a;
+  text-align:left;
   transition:.3s;
 }
 
 .card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 0 25px #ff1a1a;
-}
-
-/* SCREENSHOTS */
-.screens{
-  padding:60px 20px;
-  text-align:center;
-}
-
-.screens h2{
-  color:#ff1a1a;
-  margin-bottom:20px;
-}
-
-.screens img{
-  width:200px;
-  margin:10px;
-  border-radius:10px;
+  background:#161616;
 }
 
 /* DOWNLOAD */
 .download{
-  padding:60px 20px;
   text-align:center;
+  padding:60px 20px;
+}
+
+.download h2{
+  margin-bottom:10px;
+}
+
+.download p{
+  color:#aaa;
 }
 
 .big{
-  font-size:20px;
+  font-size:18px;
 }
 
 /* FOOTER */
 footer{
-  padding:20px;
   text-align:center;
-  color:#777;
+  padding:20px;
+  color:#666;
 }
 
-/* RESPONSIVE */
-@media(max-width:600px){
-  .hero h1{
-    font-size:30px;
+/* DESKTOP */
+@media(min-width:768px){
+  .hero h1{font-size:48px;}
+  .cards{
+    grid-template-columns:repeat(2,1fr);
   }
 }
 </style>
@@ -171,25 +153,25 @@ footer{
 
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
+<!-- NAV -->
+<div class="nav">
   <h2>Nex Clash</h2>
-  <a href="https://fs.digicroz.com/nexclash/apper/nex-clash/apk-builds/nex-clash-v1.apk" class="download-top">Download</a>
+  <a href="https://fs.digicroz.com/nexclash/apper/nex-clash/apk-builds/nex-clash-v1.apk">Download</a>
 </div>
 
 <!-- HERO -->
 <section class="hero">
-  <h1>Dominate the Nex Clash Arena</h1>
+  <h1>Dominate the <span>Nex Clash</span> Arena</h1>
   <p>Join tournaments, compete with players, and earn real rewards.</p>
-  <a href="https://fs.digicroz.com/nexclash/apper/nex-clash/apk-builds/nex-clash-v1.apk" class="btn">⬇ Download Now</a>
+  <a href="https://fs.digicroz.com/nexclash/apper/nex-clash/apk-builds/nex-clash-v1.apk" class="btn">Download APK</a>
 </section>
 
 <!-- STATS -->
-<section class="stats">
-  <div>⭐ 4.8 Rating</div>
-  <div>📥 50K+ Downloads</div>
-  <div>🏆 1K+ Matches</div>
-</section>
+<div class="stats">
+  <div>⭐ 4.8</div>
+  <div>📦 50K+</div>
+  <div>🏆 1K+</div>
+</div>
 
 <!-- FEATURES -->
 <section class="features">
@@ -218,23 +200,15 @@ footer{
   </div>
 </section>
 
-<!-- SCREENSHOTS -->
-<section class="screens">
-  <h2>App Preview</h2>
-  <img src="https://via.placeholder.com/200x400">
-  <img src="https://via.placeholder.com/200x400">
-</section>
-
 <!-- DOWNLOAD -->
 <section class="download">
   <h2>Download Nex Clash</h2>
   <p>Safe & Secure APK</p>
-  <a href="https://fs.digicroz.com/nexclash/apper/nex-clash/apk-builds/nex-clash-v1.apk" class="btn big">⬇ Download APK</a>
+  <a href="https://fs.digicroz.com/nexclash/apper/nex-clash/apk-builds/nex-clash-v1.apk" class="btn big">Download Now</a>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <p>© 2026 Nex Clash</p>
+  © 2026 Nex Clash
 </footer>
 
 </body>
