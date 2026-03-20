@@ -1,61 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tournament App</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nex Clash</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#000;
+  color:white;
+}
+
+/* NAVBAR */
+.navbar{
+  position:fixed;
+  width:100%;
+  top:0;
+  background:rgba(0,0,0,0.85);
+  backdrop-filter:blur(10px);
+  padding:15px 20px;
+  display:flex;
+  justify-content:space-between;
+  z-index:1000;
+}
+
+.navbar h2{
+  color:#ff1a1a;
+}
+
+.download-top{
+  background:#ff1a1a;
+  padding:8px 15px;
+  border-radius:20px;
+  color:white;
+  text-decoration:none;
+}
+
+/* HERO */
+.hero{
+  padding-top:120px;
+  padding-bottom:80px;
+  text-align:center;
+  background:radial-gradient(circle,#1a0000,#000);
+}
+
+.hero h1{
+  font-size:45px;
+  color:#ff1a1a;
+  text-shadow:0 0 30px #ff1a1a;
+}
+
+.hero p{
+  margin:20px auto;
+  max-width:500px;
+  color:#bbb;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:15px 35px;
+  background:#ff1a1a;
+  border-radius:30px;
+  color:white;
+  text-decoration:none;
+  box-shadow:0 0 20px #ff1a1a;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 40px #ff1a1a;
+}
+
+/* STATS */
+.stats{
+  display:flex;
+  justify-content:space-around;
+  padding:30px 10px;
+  background:#0a0a0a;
+  text-align:center;
+}
+
+.stats div{
+  font-size:14px;
+}
+
+/* FEATURES */
+.features{
+  padding:60px 20px;
+  text-align:center;
+}
+
+.features h2{
+  color:#ff1a1a;
+  margin-bottom:30px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+
+.card{
+  padding:25px;
+  border-radius:15px;
+  background:#0d0d0d;
+  border:1px solid #ff1a1a;
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 25px #ff1a1a;
+}
+
+/* SCREENSHOTS */
+.screens{
+  padding:60px 20px;
+  text-align:center;
+}
+
+.screens h2{
+  color:#ff1a1a;
+  margin-bottom:20px;
+}
+
+.screens img{
+  width:200px;
+  margin:10px;
+  border-radius:10px;
+}
+
+/* DOWNLOAD */
+.download{
+  padding:60px 20px;
+  text-align:center;
+}
+
+.big{
+  font-size:20px;
+}
+
+/* FOOTER */
+footer{
+  padding:20px;
+  text-align:center;
+  color:#777;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .hero h1{
+    font-size:30px;
+  }
+}
+</style>
+
 </head>
+
 <body>
 
-<header class="hero">
-  <h1>🎮 Tournament App</h1>
-  <p>Play. Compete. Win Real Rewards.</p>
-  <a href="#" class="btn glow">Download Now</a>
-</header>
+<!-- NAVBAR -->
+<div class="navbar">
+  <h2>Nex Clash</h2>
+  <a href="https://fs.digicroz.com/nexclash/apper/nex-clash/apk-builds/nex-clash-v1.apk" class="download-top">Download</a>
+</div>
 
+<!-- HERO -->
+<section class="hero">
+  <h1>Dominate the Nex Clash Arena</h1>
+  <p>Join tournaments, compete with players, and earn real rewards.</p>
+  <a href="https://fs.digicroz.com/nexclash/apper/nex-clash/apk-builds/nex-clash-v1.apk" class="btn">⬇ Download Now</a>
+</section>
+
+<!-- STATS -->
 <section class="stats">
   <div>⭐ 4.8 Rating</div>
   <div>📥 50K+ Downloads</div>
-  <div>🏆 1K+ Tournaments</div>
+  <div>🏆 1K+ Matches</div>
 </section>
 
-<section class="preview">
-  <h2>App Preview</h2>
-  <div class="images">
-    <img src="images/screen1.png">
-    <img src="images/screen2.png">
-    <img src="images/screen3.png">
-  </div>
-</section>
-
+<!-- FEATURES -->
 <section class="features">
-  <h2>Why Choose Us</h2>
-  <div class="grid">
-    <div class="card">🏆 Daily Tournaments</div>
-    <div class="card">⚡ Instant Matchmaking</div>
-    <div class="card">💰 Real Rewards</div>
-    <div class="card">📊 Live Leaderboards</div>
+  <h2>Features</h2>
+
+  <div class="cards">
+    <div class="card">
+      💰 Earn Rewards  
+      <p>Win real money tournaments.</p>
+    </div>
+
+    <div class="card">
+      🔒 Secure  
+      <p>Fast & safe withdrawals.</p>
+    </div>
+
+    <div class="card">
+      ⚡ Smooth Gameplay  
+      <p>No lag experience.</p>
+    </div>
+
+    <div class="card">
+      🏆 Leaderboards  
+      <p>Compete globally.</p>
+    </div>
   </div>
 </section>
 
-<section class="video">
-  <h2>Watch Demo</h2>
-  <video controls>
-    <source src="demo.mp4" type="video/mp4">
-  </video>
+<!-- SCREENSHOTS -->
+<section class="screens">
+  <h2>App Preview</h2>
+  <img src="https://via.placeholder.com/200x400">
+  <img src="https://via.placeholder.com/200x400">
 </section>
 
+<!-- DOWNLOAD -->
 <section class="download">
-  <h2>Download Now</h2>
+  <h2>Download Nex Clash</h2>
   <p>Safe & Secure APK</p>
-  <a href="#" class="btn big">⬇ Download APK</a>
+  <a href="https://fs.digicroz.com/nexclash/apper/nex-clash/apk-builds/nex-clash-v1.apk" class="btn big">⬇ Download APK</a>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 Tournament App | All Rights Reserved</p>
+  <p>© 2026 Nex Clash</p>
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
