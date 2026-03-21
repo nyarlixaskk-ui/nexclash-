@@ -16,22 +16,16 @@ body{
   overflow-x:hidden;
 }
 
-/* 🔥 ANIMATED GLOW BACKGROUND */
-body::before{
-  content:"";
+/* 🎮 MOUSE GLOW */
+.glow{
   position:fixed;
-  width:600px;
-  height:600px;
-  background:radial-gradient(circle, rgba(255,0,0,0.25), transparent);
-  top:-100px;
-  left:-100px;
-  animation:moveGlow 8s infinite alternate;
-  z-index:-1;
-}
-
-@keyframes moveGlow{
-  0%{transform:translate(0,0);}
-  100%{transform:translate(200px,200px);}
+  width:300px;
+  height:300px;
+  background:radial-gradient(circle, rgba(255,0,0,0.2), transparent);
+  pointer-events:none;
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  z-index:0;
 }
 
 /* NAV */
@@ -41,14 +35,12 @@ body::before{
   align-items:center;
   padding:25px;
   background:#000;
-  border-bottom:1px solid #111;
   position:sticky;
   top:0;
+  z-index:10;
 }
 
-.nav h2{
-  color:#ff2a2a;
-}
+.nav h2{color:#ff2a2a;}
 
 .nav a{
   background:#ff2a2a;
@@ -66,18 +58,15 @@ body::before{
 
 .hero h1{
   font-size:36px;
-  margin-bottom:25px;
+  margin-bottom:20px;
 }
 
-.hero span{
-  color:#ff2a2a;
-}
+.hero span{color:#ff2a2a;}
 
 .hero p{
   color:#aaa;
   max-width:550px;
   margin:auto;
-  font-size:16px;
 }
 
 .btn{
@@ -86,15 +75,9 @@ body::before{
   padding:18px 45px;
   background:#ff2a2a;
   border-radius:50px;
-  text-decoration:none;
   color:white;
-  font-size:18px;
+  text-decoration:none;
   box-shadow:0 0 30px rgba(255,0,0,0.5);
-  transition:.3s;
-}
-
-.btn:hover{
-  transform:scale(1.08);
 }
 
 /* STATS */
@@ -114,9 +97,8 @@ body::before{
 }
 
 .features h2{
-  margin-bottom:60px;
   color:#ff2a2a;
-  font-size:28px;
+  margin-bottom:60px;
 }
 
 .cards{
@@ -124,29 +106,41 @@ body::before{
   gap:30px;
 }
 
-/* NORMAL CARD */
+/* 🎬 ANIMATION BASE */
 .card{
   background:#111;
   padding:30px;
   border-radius:20px;
-  text-align:left;
-  transition:.3s;
+  opacity:0;
+  transform:translateY(50px);
+  transition:all .6s ease;
 }
 
-.card p{
-  color:#aaa;
+/* visible */
+.card.show{
+  opacity:1;
+  transform:translateY(0);
 }
 
-/* 🔥 HIGHLIGHT CARD */
-.highlight{
+/* 🔥 medium */
+.card.mid{
+  box-shadow:0 0 20px rgba(255,0,0,0.15);
+}
+
+/* 💥 strong */
+.card.strong{
   background:linear-gradient(145deg,#1a0000,#000);
   border:1px solid #ff2a2a;
-  box-shadow:0 0 30px rgba(255,0,0,0.3);
-  transform:scale(1.02);
+  animation:pulse 2s infinite;
 }
 
-.highlight h3{
-  color:#ff2a2a;
+.card.strong h3{color:#ff2a2a;}
+
+/* 💡 pulse animation */
+@keyframes pulse{
+  0%{box-shadow:0 0 10px rgba(255,0,0,0.3);}
+  50%{box-shadow:0 0 40px rgba(255,0,0,0.6);}
+  100%{box-shadow:0 0 10px rgba(255,0,0,0.3);}
 }
 
 /* DOWNLOAD */
@@ -155,47 +149,30 @@ body::before{
   text-align:center;
 }
 
-.download h2{
-  font-size:28px;
-  margin-bottom:15px;
-}
+.download p{color:#aaa;}
 
-.download p{
-  color:#aaa;
-}
-
-.big{
-  font-size:20px;
-}
-
-/* FOOTER */
 footer{
-  text-align:center;
   padding:50px;
+  text-align:center;
   color:#666;
 }
 
 /* DESKTOP */
 @media(min-width:768px){
-  .hero h1{font-size:52px;}
+  .hero h1{font-size:50px;}
 
   .cards{
     grid-template-columns:repeat(2,1fr);
     max-width:800px;
     margin:auto;
   }
-
-  .stats{
-    max-width:700px;
-    margin:auto;
-    margin-top:60px;
-  }
 }
 </style>
-
 </head>
 
 <body>
+
+<div class="glow"></div>
 
 <!-- NAV -->
 <div class="nav">
@@ -206,7 +183,7 @@ footer{
 <!-- HERO -->
 <section class="hero">
   <h1>Dominate the <span>Nex Clash</span> Arena</h1>
-  <p>Join tournaments, compete with players, and earn real rewards in a competitive gaming environment.</p>
+  <p>Join tournaments, compete with players, and earn real rewards.</p>
 
   <a href="https://fs.digicroz.com/nexclash/apper/nex-clash/apk-builds/nex-clash-v1.apk" class="btn">
     ⬇ Download APK
@@ -226,22 +203,22 @@ footer{
 
   <div class="cards">
 
-    <div class="card">
+    <div class="card mid">
       <h3>💰 Earn Rewards</h3>
       <p>Win real money by competing in tournaments.</p>
     </div>
 
-    <div class="card highlight">
+    <div class="card strong">
       <h3>⚡ Smooth Gameplay</h3>
       <p>Ultra fast, no lag performance optimized for competitive play.</p>
     </div>
 
-    <div class="card">
+    <div class="card mid">
       <h3>🔒 Secure System</h3>
       <p>Fast and safe withdrawals you can trust.</p>
     </div>
 
-    <div class="card">
+    <div class="card mid">
       <h3>🏆 Global Rankings</h3>
       <p>Compete with players worldwide.</p>
     </div>
@@ -254,7 +231,7 @@ footer{
   <h2>Download Nex Clash</h2>
   <p>Safe & Secure APK</p>
 
-  <a href="https://fs.digicroz.com/nexclash/apper/nex-clash/apk-builds/nex-clash-v1.apk" class="btn big">
+  <a href="https://fs.digicroz.com/nexclash/apper/nex-clash/apk-builds/nex-clash-v1.apk" class="btn">
     Download Now
   </a>
 </section>
@@ -262,6 +239,29 @@ footer{
 <footer>
   © 2026 Nex Clash
 </footer>
+
+<script>
+/* 🎬 SCROLL ANIMATION */
+const cards = document.querySelectorAll('.card');
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+cards.forEach(card=>observer.observe(card));
+
+/* 🎮 MOUSE GLOW */
+const glow = document.querySelector('.glow');
+
+document.addEventListener('mousemove',e=>{
+  glow.style.left = e.clientX + 'px';
+  glow.style.top = e.clientY + 'px';
+});
+</script>
 
 </body>
 </html>
